@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-canvas: #faf9f6;
+  --color-ink: #2c2c2c;
+  --color-muted: #6b6b6b;
+  --color-line: #e8e4dc;
+  --color-gold: #c4a35a;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dragging {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  cursor: grabbing !important;
+}
+
+/* Keep range thumb vertically centered with neighboring color swatches */
+.line-range {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.line-range::-webkit-slider-runnable-track {
+  height: 4px;
+}
+
+.line-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  border-radius: 999px;
+  background: #2c2c2c;
+}
+
+.line-range::-moz-range-track {
+  height: 4px;
+}
+
+.line-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 999px;
+  background: #2c2c2c;
+}
